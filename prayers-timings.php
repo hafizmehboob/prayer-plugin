@@ -33,7 +33,7 @@ function prayers_timings_plugin_create_menu() {
             'administrator',
             sanitize_key('prayers-timings'),
             'my_cool_plugin_settings_page',
-            plugin_dir_url(__FILE__) . 'images/icon_prayer.png',
+            plugin_dir_url(__FILE__) . 'images/islamic.png',
             20);
     add_action('admin_init', 'register_prayers_timings_plugin_settings');
 }
