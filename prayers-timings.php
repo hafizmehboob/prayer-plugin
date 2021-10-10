@@ -15,6 +15,7 @@
 
 
   } */
+include_once 'includes/add-style-js.php';
 function sample_admin_notice__success() {
     ?>
     <div class="notice notice-success is-dismissible">
@@ -40,19 +41,22 @@ function prayers_timings_plugin_create_menu() {
 
 function register_prayers_timings_plugin_settings(){
     register_setting('prayers-timings-settings-group','new_option_name');
+    register_setting('prayers-timings-settings-group','select_country');
+
 }
 
 function my_cool_plugin_settings_page(){
     ?>
     <div class="wrap">
         <h1>Prayers Timings</h1>
+        <h2>Create Your Shortcode on City Base.</h2>
         <form method="post" action="options.php">
             <?php settings_fields('prayers-timings-settings-group'); ?>
             <?php do_settings_sections('prayers-timings-settings-group'); ?>
             <table class="form-table">
                 <tr valign="top">
-                    <th scope="row">New Option Name</th>
-                    <td><input type="text" name="new_option_name" value="<?php echo esc_attr(get_option('new_option_name')); ?>" /></td>
+                    <th scope="row">Select Country</th>
+                    <td><?php include_once 'includes/countries-list.php'; ?></td>
                 </tr>
             </table>
             <?php submit_button(); ?>
