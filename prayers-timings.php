@@ -38,6 +38,7 @@ function prayers_timings_plugin_create_menu() {
 function register_prayers_timings_plugin_settings(){
     register_setting('prayers-timings-settings-group','new_option_name');
     register_setting('prayers-timings-settings-group','select_country');
+    register_setting('prayers-timings-settings-group','select_city');
 }
 function my_cool_plugin_settings_page(){
     ?>
@@ -51,6 +52,12 @@ function my_cool_plugin_settings_page(){
                 <tr valign="top">
                     <th scope="row">Select Country</th>
                     <td><?php include_once 'includes/countries-list.php'; ?></td>
+                </tr>
+                 <tr valign="top">
+                    <th scope="row">Select City</th>
+                    <td><select name="select_city" id="cities_names" class="cities_names">
+                            <option value="" >City</option>
+                        </select></td>
                 </tr>
             </table>
             <?php submit_button(); ?>
