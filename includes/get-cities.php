@@ -20,7 +20,6 @@ $response = curl_exec($curl);
 curl_close($curl);
 $response = json_decode($response);
 $getCititesList = $response->data;
-
     foreach ($getCititesList as $cities){
         ?>
         <option value='<?php echo $cities; ?>'><?php echo $cities; ?></option>                                                 
